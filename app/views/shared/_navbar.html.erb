@@ -1,0 +1,64 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top" style="color:gray;">
+  <%= link_to root_path, class: "navbar-brand" do %>
+    <h3 style="color: pink;"><strong>GyftWrapped</strong></h3>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto navbar-center-buttons">
+      <li>
+        <%= link_to "Home", root_path %></li>
+      <li>
+        <%= link_to "About", about_path %></li>
+      <li>
+        <%= link_to "Gifts", root_path %></li>
+    </ul>
+   </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <% if user_signed_in? %>
+        <form class="form-inline">
+          <button class="btn btn-outline-primary" type="button">Dashboard</button>
+        </form>
+        <div style="padding-left:35px">
+          <li class="nav-item dropdown">
+            
+
+
+        <i class="avatar-square dropdown-toggle fa fa-user" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></i>
+        
+
+
+
+            <div class="dropdown-menu dropdown-menu-right" style="margin-top: 10px;" aria-labelledby="navbarDropdown">
+              <%= link_to "About", "/about", class: "dropdown-item" %>
+              <%= link_to "Contact Us", "/contact", class: "dropdown-item" %>
+              <%= link_to "Edit Profile", "/users/edit", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        </div>
+
+      <% else %>
+        <form class="form-inline">
+          <li class="nav-item" style="padding-left:10px;">
+            <%= link_to "Login", new_user_session_path, class: "btn btn-outline-primary" %>
+          </li> 
+
+          <div style="padding-left:30px; padding-right:30px;">
+            <a class="btn btn-success" href="/users/sign_up" role="button">
+            Sign Up
+            </a>
+          </div>
+        </form>
+
+      <% end %>
+
+    </ul>
+  </div>
+</div>
