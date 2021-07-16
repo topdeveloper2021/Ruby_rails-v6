@@ -1,3 +1,8 @@
+This is my skype id
+live:.cid.1e2e5c6ab1476ddd
+
+
+
 # README
 
 This README would normally document whatever steps are necessary to get the
